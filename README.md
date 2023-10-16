@@ -56,6 +56,7 @@ flutter doctor
 flutter create hello_world_app
 cd hello_world_app
 flutter run
+flutter clean
 flutter build apk
 ```
 
@@ -63,6 +64,8 @@ flutter build apk
 ```bash
 keytool -genkeypair -v -keystore hello.keystore -keyalg RSA -keysize 2048 -validity 10000 -alias hello-world
 - Enter keystore password: 123456
-  
+
+flutter clean
 flutter build apk --release
+flutter build appbundle
 ```
