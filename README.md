@@ -16,30 +16,36 @@ Add the following paths to your system's `PATH`:
 Download Android command line tools from the official Android Developers website:
 [Download Android Command Line Tools](https://developer.android.com/studio)
 
-Move the `cmdline-tools` folder to `C:\Program Files\Android\sdk`
+Open Command Prompt and run:
+```shell
+sdkmanager "cmdline-tools;latest" --sdk_root="C:\Program Files\Android\sdk"
+```
 
 Set the following environment variables:
 - `ANDROID_HOME`: `C:\Program Files\Android\sdk`
 
 Add the following paths to your system's `PATH`:
-- `%ANDROID_HOME%\cmdline-tools\bin`
+- `%ANDROID_HOME%\cmdline-tools\latest\bin`
 
 ## 3. Download Required SDK Components
 
 Use `sdkmanager` to download SDK components:
 
 ```bash
-sdkmanager "platforms;android-29" --sdk_root="C:\Program Files\Android\sdk"
-sdkmanager "system-images;android-29;default;x86_64" --sdk_root="C:\Program Files\Android\sdk"
-sdkmanager "build-tools;29.0.3" --sdk_root="C:\Program Files\Android\sdk"
-sdkmanager "platform-tools" --sdk_root="C:\Program Files\Android\sdk"
-sdkmanager "cmdline-tools;latest" --sdk_root="C:\Program Files\Android\sdk"
-sdkmanager "emulator" --sdk_root="C:\Program Files\Android\sdk"
+sdkmanager --list
+sdkmanager "platforms;android-29"
+sdkmanager "system-images;android-29;default;x86_64"
+sdkmanager "build-tools;29.0.3"
+sdkmanager "platform-tools"
+sdkmanager "emulator"
 
-sdkmanager --licenses --sdk_root="C:\Program Files\Android\sdk"
+sdkmanager --licenses
 ```
 
-## 3. Download Flutter
+Add the following paths to your system's `PATH`:
+- `%ANDROID_HOME%\emulator`
+
+## 4. Download Flutter
 
 Get the Flutter SDK for Windows from the official Flutter website:
 [Download Flutter for Windows](https://docs.flutter.dev/get-started/install/windows)
